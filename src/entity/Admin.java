@@ -7,17 +7,11 @@ public class Admin extends User {
 	private List<MeetingRoom> meetingRooms; // A list of meeting rooms
 
     // Constructors, additional methods, and other properties as needed
-
-    public Admin() {
-        // Default constructor
-    }
-
-    public Admin(String name, String email, String phone) {
-        super();
-        // Initialize other properties specific to Admin
+	public Admin(String userId, String name, String email, String password) {
+        super(userId, name, email, password, Role.ADMIN);
         this.meetingRooms = new ArrayList<>();
     }
-
+	
     public List<MeetingRoom> getMeetingRooms() {
         return meetingRooms;
     }
@@ -49,12 +43,5 @@ public class Admin extends User {
             // Handle the case where the provided room is not managed by this admin
             throw new IllegalArgumentException("Admin does not manage this meeting room.");
         }
-    }
-
-	public Admin(List<MeetingRoom> meetingRooms) {
-		super();
-		this.meetingRooms = meetingRooms;
-	}
-    
-    
+    }    
 }

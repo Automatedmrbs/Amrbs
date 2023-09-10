@@ -6,7 +6,7 @@ public class User {
     private String email;
     private String phone;
     private int credits;
-    private String role; // Admin, Manager, Member
+    private Role role; // Admin, Manager, Member
 	public Long getId() {
 		return id;
 	}
@@ -37,10 +37,28 @@ public class User {
 	public void setCredits(int credits) {
 		this.credits = credits;
 	}
-	public String getRole() {
+	
+	public Role getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
+	public User(Long id, String name, String email, String phone, int credits, Role role) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.credits = credits;
+		this.role = role;
+	}
+	public User(int i, String name2, String email2, String password, Role member) {
+		// TODO Auto-generated constructor stub
+	}
+	public User(String userId, String name2, String email2, String password, Role admin) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 }

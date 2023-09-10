@@ -1,6 +1,7 @@
 package entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 public class Meeting {
@@ -115,6 +116,20 @@ public class Meeting {
 
 	public Meeting() {
 		super();
+	}
+
+	public Meeting(int int1, String string, LocalDateTime localDateTime, String string2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<Meeting> getAttendees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getMaxCapacity() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
     
     
