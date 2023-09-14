@@ -6,8 +6,11 @@ import Dao.AdminDAOImpl;
 import Dao.MemberDAOImpl;
 import service.AdminService;
 import service.AdminServiceImpl;
+import service.ManagerService;
 import service.MemberService;
 import service.MemberServiceImpl;
+import service.ManagerService;
+import service.ManagerServiceImpl;
 
 public class Main {
 
@@ -22,5 +25,8 @@ public class Main {
 	     memberView.run();
 	        // Run the admin view
 	     adminView.run();
+		ManagerService managerService = new ManagerServiceImpl();
+		 ManagerView managerView = new ManagerView(managerService);
+		 managerView.run();
 	     }
 }
