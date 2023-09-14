@@ -51,7 +51,7 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
-    public MeetingRoom configureMeetingRoom(MeetingRoom meetingRoom) throws SQLException {
+    public int configureMeetingRoom(long roomId,MeetingRoom meetingRoom) throws SQLException {
     	String updateQuery = "UPDATE meeting_room SET unique_name = ?, seating_capacity = ?, ratings = ?, " +
                 "per_hour_cost = ?, projector_available = ?, wifi_available = ?, " +
                 "conference_call_available = ?, whiteboard_available = ?, " +
@@ -75,29 +75,11 @@ public class AdminDAOImpl implements AdminDAO {
             int rowsAffected = preparedStatement.executeUpdate();
             
             if (rowsAffected > 0) {
-                return meetingRoom;
+               return 1;
             } else {
                 throw new SQLException("Meeting room configuration failed.");
             }
         }
-    }
-
-    @Override
-    public MeetingRoom convertToMeetingRoom(ResultSet resultSet) throws SQLException {
-        MeetingRoom meetingRoom = new MeetingRoom();
-        meetingRoom.setId(resultSet.getLong("id"));
-        meetingRoom.setUniqueName(resultSet.getString("unique_name"));
-        meetingRoom.setSeatingCapacity(resultSet.getInt("seating_capacity"));
-        meetingRoom.setRatings(resultSet.getInt("ratings"));
-        meetingRoom.setPerHourCost(resultSet.getDouble("per_hour_cost"));
-        meetingRoom.setProjectorAvailable(resultSet.getBoolean("projector_available"));
-        meetingRoom.setWifiAvailable(resultSet.getBoolean("wifi_available"));
-        meetingRoom.setConferenceCallAvailable(resultSet.getBoolean("conference_call_available"));
-        meetingRoom.setWhiteboardAvailable(resultSet.getBoolean("whiteboard_available"));
-        meetingRoom.setWaterDispenserAvailable(resultSet.getBoolean("water_dispenser_available"));
-        meetingRoom.setTvAvailable(resultSet.getBoolean("tv_available"));
-        meetingRoom.setCoffeeMachineAvailable(resultSet.getBoolean("coffee_machine_available"));
-        return meetingRoom;
     }
 
 }

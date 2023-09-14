@@ -9,7 +9,5 @@ public interface AdminDAO {
 	
 	MeetingRoom createMeetingRoom(MeetingRoom meetingRoom) throws SQLException;
     
-    MeetingRoom configureMeetingRoom(MeetingRoom meetingRoom) throws SQLException;
-
-    MeetingRoom convertToMeetingRoom(ResultSet resultSet) throws SQLException;
+    int configureMeetingRoom(long roomId,MeetingRoom meetingRoom) throws SQLException;
 }

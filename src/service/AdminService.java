@@ -1,9 +1,12 @@
 package service;
 
+import java.sql.SQLException;
+
 import Dao.MeetingRoomDAO;
+import entity.MeetingRoom;
 
 public interface AdminService {
-	MeetingRoomDAO createMeetingRoom(MeetingRoomDAO roomDAO);
+	MeetingRoom createMeetingRoom(MeetingRoom meetingRooms) throws SQLException;
 
-    MeetingRoomDAO configureMeetingRoom(Long roomId, MeetingRoomDAO roomDAO);
+	int configureMeetingRoom(long roomId, MeetingRoom meetingRoom) throws SQLException;
 }

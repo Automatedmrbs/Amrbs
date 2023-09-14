@@ -1,6 +1,10 @@
 package entity;
 
 public class User {
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	private Long id;
     private String name;
     private String email;
